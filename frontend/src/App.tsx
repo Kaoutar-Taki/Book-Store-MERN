@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <Navbar />
@@ -11,6 +11,6 @@ function App() {
       <footer>Footer</footer>
     </>
   );
-}
+};
 
 export default App;
