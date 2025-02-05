@@ -5,30 +5,35 @@ import { Link } from "react-router-dom";
 import avatarImg from "../assets/avatar.png";
 import { useState } from "react";
 
-const navigation = [
+interface NavigationItem {
+  name: string;
+  href: string;
+}
+
+const navigation: NavigationItem[] = [
   { name: "Dashboard", href: "/dashboard" },
   { name: "Orders", href: "/orders" },
   { name: "Cart Page", href: "/cart" },
   { name: "Check Out", href: "/checkout" },
 ];
 
-const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+const Navbar: React.FC = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+    setIsDropdownOpen(prev => !prev);
   };
 
-  const currentUser = true;
+  const currentUser: boolean = true;
 
   return (
     <header className="mx-auto max-w-screen-2xl px-4 py-6">
       <nav className="flex items-center justify-between">
-        {/* left side */}
+        {/* Left side */}
         <div className="flex items-center gap-4 md:gap-16">
           <Link to="/">
             <HiMiniBars3CenterLeft className="size-6" />
           </Link>
-          {/* search input */}
+          {/* Search input */}
           <div className="relative w-40 space-x-2 sm:w-72">
             <IoSearchOutline className="absolute inset-y-2 left-3 inline-block" />
             <input
@@ -38,15 +43,16 @@ const Navbar = () => {
             />
           </div>
         </div>
-        {/* right side */}
+
+        {/* Right side */}
         <div className="relative flex items-center space-x-2 md:space-x-3">
-          <div className="">
+          <div>
             {currentUser ? (
               <>
                 <button onClick={toggleDropdown}>
                   <img
                     src={avatarImg}
-                    alt=""
+                    alt="User Avatar"
                     className={`size-7 rounded-full ${currentUser ? "ring-2 ring-blue-500" : ""}`}
                   />
                 </button>
@@ -75,7 +81,7 @@ const Navbar = () => {
             <HiOutlineHeart className="size-6" />
           </button>
           <Link to="/cart" className="bg-primary flex items-center rounded-sm p-1 px-2 sm:px-6">
-            <HiOutlineShoppingCart className="" />
+            <HiOutlineShoppingCart />
             <span className="text-sm font-semibold sm:ml-1">0</span>
           </Link>
         </div>

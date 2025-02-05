@@ -1,6 +1,6 @@
 import Banner from "./Banner";
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <>
       <Banner />
