@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import BookCard from "./books/BookCard";
 import { Book } from "../../types/book";
+import BookCard from "../books/BookCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";

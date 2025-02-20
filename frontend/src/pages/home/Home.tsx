@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import Recommened from "./Recommened";
 import TopSellers from "./TopSellers";
 
 const Home: React.FC = () => {
@@ -6,6 +7,7 @@ const Home: React.FC = () => {
     <>
       <Banner />
       <TopSellers />
+      <Recommened />
     </>
   );
 };

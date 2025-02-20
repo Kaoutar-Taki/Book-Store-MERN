@@ -1,7 +1,7 @@
 import { FiShoppingCart } from "react-icons/fi";
-import { getImgUrl } from "../../../utils/getImgUrl";
 import { Link } from "react-router-dom";
-import { Book } from "../../../types/book";
+import { getImgUrl } from "../../utils/getImgUrl";
+import { Book } from "../../types/book";
 
 interface BookCardProps {
   book: Book;
