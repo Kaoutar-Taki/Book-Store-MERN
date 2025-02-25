@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
             <input
               type="search"
               placeholder="Search here..."
-              className="w-full rounded-md bg-[#eaeaea] px-6 py-1 focus:outline-none md:px-8"
+              className="w-full rounded-md bg-[#EAEAEA] px-6 py-1 focus:outline-none md:px-8"
             />
           </div>
         </div>
