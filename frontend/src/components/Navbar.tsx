@@ -4,6 +4,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import avatarImg from "../assets/avatar.png";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 interface NavigationItem {
   name: string;
@@ -23,7 +24,10 @@ const Navbar: React.FC = () => {
     setIsDropdownOpen(prev => !prev);
   };
 
-  const currentUser: boolean = true;
+  const cartItems = useSelector(state => state.cart.cartItems);
+  console.log(cartItems);
+
+  const currentUser: boolean = false;
 
   return (
     <header className="mx-auto max-w-screen-2xl px-4 py-6">
@@ -82,7 +86,11 @@ const Navbar: React.FC = () => {
           </button>
           <Link to="/cart" className="bg-primary flex items-center rounded-sm p-1 px-2 sm:px-6">
             <HiOutlineShoppingCart />
-            <span className="text-sm font-semibold sm:ml-1">0</span>
+            {cartItems.length > 0 ? (
+              <span className="text-sm font-semibold sm:ml-1">{cartItems.length}</span>
+            ) : (
+              <span className="text-sm font-semibold sm:ml-1">0</span>
+            )}
           </Link>
         </div>
       </nav>
